@@ -3,7 +3,6 @@ import { headers } from "../helpers/DataHelper";
 const PostUpvoteMovie = async request => {
     const upvoteMovieRequestData = await request.json();
     const movieNightDataResults = JSON.parse(await movieNightData.get('movies'));
-    const userList = JSON.parse(await movieNightData.get('users'));
 
     const updateUpvotedMovies = (newMovieData, apiDataResults) => {
         const upvotedMovieMatch = apiDataResults.filter(movie => movie.imdbID === newMovieData.imdbID);
@@ -17,12 +16,6 @@ const PostUpvoteMovie = async request => {
 
         return apiDataResults;
     };
-
-    const userMatch = userList.filter(user => user.UserName === upvoteMovieRequestData.userName);
-    if (userMatch.length)
-        userMatch[0].UpvotedMovies.push(upvoteMovieRequestData.imdbID);
-
-    await movieNightData.put('users', JSON.stringify(userList));
 
     const newMovieNightData = updateUpvotedMovies(upvoteMovieRequestData, movieNightDataResults);
 

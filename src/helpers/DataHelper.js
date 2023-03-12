@@ -1,7 +1,8 @@
 export const headers = {
-    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Origin': ACCESS_CONTROL_ORIGIN,
+    'Vary': 'Origin',
     'Access-Control-Allow-Methods': 'POST, GET, OPTIONS',
-    'Access-Control-Allow-Headers': 'Content-type',
+    'Access-Control-Allow-Headers': 'Authorization, Content-type',
     'Access-Control-Max-Age': '86400',
     'Content-type': 'application/json'
 };

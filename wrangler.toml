@@ -8,3 +8,4 @@ kv_namespaces = [
 
 [vars]
 OMDB_API_KEY = ""
+ACCESS_CONTROL_ORIGIN = ""
