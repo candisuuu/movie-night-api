@@ -7,8 +7,6 @@ const PostUpvoteMovie = async request => {
     const updateUpvotedMovies = (newMovieData, apiDataResults) => {
         const upvotedMovieMatch = apiDataResults.filter(movie => movie.imdbID === newMovieData.imdbID);
 
-        delete upvoteMovieRequestData['userName'];
-
         if (upvotedMovieMatch.length) {
             upvotedMovieMatch[0].totalVotes += 1;
         } else
