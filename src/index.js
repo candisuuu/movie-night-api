@@ -21,4 +21,6 @@ addEventListener('fetch', (event) => {
 	const checkVerifiedRequest = verifyRequest(event.request);
 	if (checkVerifiedRequest)
 		event.respondWith(handleRequest(event.request));
+	else
+		event.respondWith(new Response("Unauthorized", { status: 401 }));
 });

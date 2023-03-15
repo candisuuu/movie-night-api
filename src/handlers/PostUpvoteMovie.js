@@ -8,7 +8,7 @@ const PostUpvoteMovie = async request => {
         const upvotedMovieMatch = apiDataResults.filter(movie => movie.imdbID === newMovieData.imdbID);
 
         if (upvotedMovieMatch.length) {
-            upvotedMovieMatch[0].totalVotes += 1;
+            upvotedMovieMatch[0].totalVotes = newMovieData.totalVotes;
         } else
             apiDataResults.push(newMovieData);
 
