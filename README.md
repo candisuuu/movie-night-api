@@ -4,10 +4,8 @@
 
 ## Updates
 
-### 3/12/2023
-* Removed user data set up and fetching via Cloudflare to instead rely on Auth0 database
-* Modified CORS headers to prevent cross-origin fetching
-* Added JWT token verification
+### 3/19/2023
+* Added method to delete upvoted movie when total upvotes reach 0
 
 ## Installing/Getting started
 
@@ -27,3 +25,6 @@ $ npx wrangler dev
 # Once worker is ready for production deploy to production
 $ wrangler publish
 ```
+
+## Next Steps for Development
+* Refactor callback function(s) that can be used in multiple handlers
